@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Échec de l'envoi</title>
+    </head>
+    <body>
+        <div class="main-modal" id="anotherElement">
+            <div class="head1" id="anotherElement">
+                <h1>Votre message n'a pas été envoyé</h1>
+            </div>
+            <div id="init" class="sub-modal open">
+                <div class="sub-modal-content" id="otherContent">
+                    <h2>Il semble que l'email fourni ne soit pas correct.</h2>
+                    <div class="failure-gif">
+                        <img src="https://media1.tenor.com/m/aAHsejjAMAMAAAAC/big-lebowski-stirring.gif"
+                             alt="GIF de l'erreur">
+                    </div>
+                    <button id="return">Revenir en arrière</button>
+                </div>
+            </div>
+        </div>
+    {% endblock content %}

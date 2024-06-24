@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Envoyé</title>
+    </head>
+    <body>
+        <div class="main-modal" id="anotherElement">
+            <div class="head1" id="anotherElement">
+                <h1>Votre message a bien été envoyé</h1>
+            </div>
+            <div id="init" class="sub-modal open">
+                <div class="sub-modal-content" id="otherContent">
+                    <h2>Merci beaucoup</h2>
+                    <div class="success-gif">
+                        <img src="https://i.gifer.com/WZ3W.gif" alt="GIF de succes">
+                    </div>
+                    <button id="return">Revenir en arrière</button>
+                </div>
+            </div>
+        </div>
+    {% endblock content %}

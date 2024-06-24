@@ -1,0 +1,974 @@
+h1 {
+    color: #FFC981;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    border-radius: 4px;
+    background-color: #323232;
+    padding: 10px;
+    margin: 0px;
+    margin-left: 0px;
+    display: inline-block;
+}
+
+body {
+    font-family: 'Lora', serif;
+    color: #000;
+    overflow: hidden;
+    background-image: url('https://images8.alphacoders.com/577/577980.jpg');
+    background-size: auto;
+    background-position: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    color: #FFC981;
+}
+
+.navigation-btn {
+    background-color: #323232;
+    color: #FFC981;
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    border-radius: 4px;
+    border: solid 2px #FFC981;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+
+.navigation-btn:hover {
+    background-color: #FFC981;
+    color: #323232;
+    border-radius: 4px;
+    border: solid 2px #323232;
+}
+
+#prev {
+    left: 1%;
+}
+
+#next {
+    right: 1%;
+}
+
+#anotherElement {
+    display: block;
+}
+
+#anotherElement.main-modal {
+    padding-top: 0px;
+    padding-bottom: 300px;
+}
+
+.success-gif {
+    margin-bottom: 10px;
+}
+
+.success-gif,
+.failure-gif {
+    margin-bottom: 10px;
+}
+
+.failure-gif img {
+    width: 350px;
+    height: 350px;
+    border-radius: 6px;
+}
+
+.failure-gif img,
+.success-gif img {
+    border-radius: 6px;
+}
+
+/* General modal styles */
+.main-modal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 100px 160px 90px 160px;
+    box-sizing: border-box;
+}
+
+.main-modal:first-of-type {
+    display: flex;
+}
+
+.sub-modal {
+    width: 98%;
+    height: 85%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.sub-modal.open {
+    display: block;
+}
+
+.sub-modal-content {
+    background-color: #323232;
+    color: #FFC981;
+    padding: 30px;
+    border-radius: 4px;
+    overflow-x: hidden;
+    font-size: 25px;
+    text-align: center;
+    overflow-y: auto;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    box-sizing: border-box;
+    max-height: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+.sub-modal-content h1 {
+    z-index: 4;
+    font-size: 35px;
+}
+
+.sub-modal-content h2 {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sub-modal-content p {
+    text-align: justify;
+}
+
+.sub-modal-content #link {
+    color: #323232;
+}
+
+.sub-modal-content:first-of-type {
+    display: block;
+}
+
+/*Border effect*/
+.sub-modal,
+.head1,
+.head2,
+.head3,
+.head4 {
+    position: relative;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.other {
+    position: relative;
+    border-radius: 4px;
+    padding: 4px;
+    margin-bottom: 3px;
+}
+
+.sub-modal::before,
+.head1::before,
+.head2::before,
+.head3::before,
+.head4::before,
+.other::before,
+.submenu::before,
+.sub-modal::after,
+.head1::after,
+.head2::after,
+.head3::after,
+.head4::after,
+.other::after,
+.submenu::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(45deg,
+            #00b3ff,
+            #00ffff,
+            #00b7ff,
+            #009dff,
+            #00c8ff);
+    background-size: 400%;
+    z-index: -1;
+    animation: glow 40s linear infinite;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.sub-modal::after,
+.head1::after,
+.head2::after,
+.head3::after,
+.head4::after,
+.other::after,
+.submenu::after {
+    filter: blur(25px);
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.main-modal,
+.sub-modal,
+.head1,
+.head2,
+.head3,
+.head4 {
+    display: none;
+}
+
+.head1,
+.head2,
+.head3,
+.head4 {
+    margin-bottom: 30px;
+}
+
+.head1 {
+    max-width: 439px;
+}
+
+.head2 {
+    max-width: 547px;
+}
+
+.head3 {
+    max-width: 424px;
+}
+
+.head4 {
+    max-width: 280px;
+}
+
+/*Menu*/
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px 20px 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.menu>div {
+    margin: 0 10px;
+    position: relative;
+}
+
+.menu button {
+    background-color: #323232;
+    font-family: 'Lora', serif;
+    color: #FFC981;
+    border: solid 2px #ffc88100;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 20px;
+}
+
+.menu button:hover {
+    background-color: #ffc88100;
+    color: #323232;
+    font-size: 23px;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.submenu button {
+    white-space: nowrap;
+    margin: 4px;
+    border: solid 4px #ffc88100;
+}
+
+.menu>div:hover .submenu {
+    display: flex;
+}
+
+.menu .submenu button:first-child {
+    border-top: none;
+}
+
+.menu .submenu button:last-child {
+    border-bottom: none;
+}
+
+/*Sub modal content*/
+#python .sub-modal-content img {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+}
+
+#python .sub-modal-content .py,
+#python .sub-modal-content .cpp {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background-color: white;
+    transition: width 0.6s ease, height 0.6s ease;
+    border-radius: 50%;
+}
+
+#python .sub-modal-content .cpp {
+    object-fit: cover;
+}
+
+#python .sub-modal-content .py:hover,
+#python .sub-modal-content .cpp:hover {
+    width: 220px;
+    height: 220px;
+    cursor: pointer;
+    border: solid 2px #FFC981;
+    box-shadow: 0 0 100px rgb(15, 211, 246);
+}
+
+#python .sub-modal-content .framework {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+    transition: width 0.6s ease, height 0.6s ease;
+    position: relative;
+}
+
+#python .sub-modal-content .framework:hover {
+    width: 170px;
+    height: 170px;
+    cursor: pointer;
+    border: solid 2px #FFC981;
+    box-shadow: 0 0 100px rgb(15, 211, 246);
+}
+
+#python .sub-modal-content .web,
+#python .sub-modal-content .sql,
+.sub-modal-content .spe {
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    overflow: hidden;
+    transition: width 0.6s ease, height 0.6s ease;
+    position: relative;
+    margin: 10px;
+}
+
+#python .sub-modal-content .web:hover,
+#python .sub-modal-content .sql:hover,
+.sub-modal-content .spe:hover {
+    width: 300px;
+    height: 180px;
+    cursor: pointer;
+    border: solid 2px #FFC981;
+    box-shadow: 0 0 100px rgb(15, 211, 246);
+}
+
+.sub-modal-content h2 {
+    margin: 10px;
+    padding: 0px;
+}
+
+.sub-modal-content .project_img {
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    overflow: hidden;
+    transition: width 0.6s ease, height 0.6s ease;
+    position: relative;
+    margin: 20px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.sub-modal-content .project_img:hover {
+    width: 850px;
+    height: 500px;
+    border: solid 2px #FFC981;
+    box-shadow: 0 0 50px rgb(0, 0, 0);
+}
+
+.separator {
+    margin: 20px auto;
+    width: 90%;
+    border: none;
+    height: 2px;
+    background-color: #FFC981;
+}
+
+a {
+    text-decoration: underline;
+    color: #FFC981;
+}
+
+a:hover {
+    color: #f49a23;
+}
+
+ul {
+    margin-left: 30%;
+    text-align: justify;
+}
+
+.progress-container {
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    border-radius: 12px;
+    border: solid 2px #FFC981;
+    display: flex;
+}
+
+#progress-bar {
+    height: 100%;
+    border-radius: 12px;
+    line-height: 22px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.py-progress {
+    background-color: #35d4e9;
+    color: #35d4e9;
+}
+
+.py-e {
+    padding: 5px;
+    border: solid 2px #35d4e9;
+    color: #35d4e9;
+}
+
+.js-progress {
+    background-color: #deec21;
+    color: #deec21;
+}
+
+.js-e {
+    padding: 5px;
+    border: solid 2px #deec21;
+    color: #deec21;
+}
+
+.html-progress {
+    color: #e98f35;
+    background-color: #e98f35;
+}
+
+.html-e {
+    padding: 5px;
+    border: solid 2px #e98f35;
+    color: #e98f35;
+}
+
+.css-progress {
+    color: #c629fa;
+    background-color: #c629fa;
+}
+
+.css-e {
+    padding: 5px;
+    border: solid 2px #c629fa;
+    color: #c629fa;
+}
+
+.coverage-progress {
+    color: #35e93b;
+    background-color: #35e93b;
+}
+
+.ct-e {
+    padding: 5px;
+    border: solid 2px #35e93b;
+    color: #35e93b;
+}
+
+.saas-progress,
+.cpp-progress {
+    color: #ff02b3;
+    background-color: #ff02b3;
+}
+
+.saas-e,
+.cpp-e {
+    padding: 5px;
+    border: solid 2px #ff02b3;
+    color: #ff02b3;
+}
+
+.language-labels {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #323232;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FFC981;
+    cursor: pointer;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#contactForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+#contactForm label {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+#contactForm button,
+#return {
+    background-color: #323232;
+    color: #FFC981;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    border-radius: 4px;
+    border: solid 2px #FFC981;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+#contactForm button:hover,
+#return:hover {
+    background-color: #FFC981;
+    color: #323232;
+    border-radius: 4px;
+    border: solid 2px #323232;
+}
+
+textarea,
+input {
+    background-color: #323232;
+    color: #FFC981;
+    font-family: 'Lora', serif;
+    font-size: 25px;
+    border-radius: 4px;
+    border: solid 2px #FFC981;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    max-width: 100%;
+    min-width: 70%;
+    overflow: auto;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+@media (max-width: 1650px) and (min-width: 961px) {
+    #show {
+        display: none;
+    }
+
+    ul {
+        font-size: 20px;
+    }
+
+    .success-gif img {
+        width: 400px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 960px) and (min-width: 741px) {
+    #show {
+        display: none;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .sub-modal-content h1 {
+        font-size: 25px;
+    }
+
+    .sub-modal-content h2,
+    #contactForm label {
+        font-size: 20px;
+    }
+
+    .head1 {
+        max-width: 320px;
+    }
+
+    .head2 {
+        max-width: 397px;
+    }
+
+    .head3 {
+        max-width: 309px;
+    }
+
+    .head4 {
+        max-width: 206px;
+    }
+
+    ul {
+        padding: 0px;
+        margin: 10px;
+        font-size: 20px;
+    }
+
+    p,
+    textarea,
+    input {
+        font-size: 20px;
+    }
+
+    .sub-modal-content .spe,
+    #python .sub-modal-content .web,
+    #python .sub-modal-content .sql {
+        width: 150px;
+        height: 75px;
+    }
+
+    .sub-modal-content .spe:hover,
+    #python .sub-modal-content .web:hover,
+    #python .sub-modal-content .sql:hover {
+        width: 200px;
+        height: 100px;
+    }
+
+    #python .sub-modal-content .cpp,
+    #python .sub-modal-content .py {
+        width: 100px;
+        height: 100px;
+    }
+
+    #python .sub-modal-content .framework {
+        width: 75px;
+        height: 75px;
+    }
+
+    #python .sub-modal-content .framework:hover {
+        width: 85px;
+        height: 85px;
+    }
+
+    .menu {
+        margin: 5px;
+        padding: 0px;
+    }
+
+    .menu button,
+    .navigation-btn,
+    textarea,
+    input,
+    #contactForm button,
+    #return {
+        padding: 5px;
+    }
+
+    .main-modal {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .progress-container {
+        display: none;
+    }
+
+    .success-gif img {
+        width: 300px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 740px) {
+
+    #show,
+    .progress-container {
+        display: none;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    .sub-modal-content h1 {
+        font-size: 21px;
+    }
+
+    .sub-modal-content h2,
+    #contactForm label {
+        font-size: 16px;
+    }
+
+    .head1 {
+        max-width: 273px;
+    }
+
+    .head2 {
+        max-width: 337px;
+    }
+
+    .head3 {
+        max-width: 263px;
+    }
+
+    .head4 {
+        max-width: 177px;
+    }
+
+    ul {
+        padding: 0px;
+        margin: 2px;
+        font-size: 15px;
+    }
+
+    p,
+    textarea,
+    input {
+        font-size: 15px;
+    }
+
+    .sub-modal-content .spe,
+    #python .sub-modal-content .web,
+    #python .sub-modal-content .sql {
+        width: 75px;
+        height: 35px;
+    }
+
+    .sub-modal-content .spe:hover,
+    #python .sub-modal-content .web:hover,
+    #python .sub-modal-content .sql:hover {
+        width: 100px;
+        height: 50px;
+    }
+
+    #python .sub-modal-content .cpp,
+    #python .sub-modal-content .py {
+        width: 70px;
+        height: 70px;
+    }
+
+    #python .sub-modal-content .cpp:hover,
+    #python .sub-modal-content .py:hover {
+        width: 75px;
+        height: 75px;
+    }
+
+    #python .sub-modal-content .framework {
+        width: 50px;
+        height: 50px;
+    }
+
+    #python .sub-modal-content .framework:hover {
+        width: 55px;
+        height: 55px;
+    }
+
+    .menu {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .menu button,
+    .navigation-btn,
+    #contactForm button,
+    #return,
+    textarea,
+    input {
+        padding: 1px;
+    }
+
+    .main-modal {
+        padding-left: 87px;
+        padding-right: 87px;
+        padding-top: 80px;
+    }
+
+    .success-gif img {
+        width: 200px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 560px) {
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #323232;
+        border-radius: 3px;
+        border: 1px solid #f1f1f1;
+        cursor: pointer;
+    }
+
+    ul {
+        padding: 0px;
+        margin: 2px;
+        font-size: 11px;
+    }
+
+    p,
+    textarea,
+    input {
+        font-size: 11px;
+    }
+
+    h1 {
+        font-size: 15px;
+    }
+
+    .sub-modal-content h1 {
+        font-size: 15px;
+    }
+
+    .sub-modal-content h2,
+    #contactForm label {
+        font-size: 14px;
+    }
+
+    .head1 {
+        max-width: 201px;
+        min-width: 201px;
+    }
+
+    .head2 {
+        max-width: 247px;
+        min-width: 247px;
+    }
+
+    .head3 {
+        max-width: 194px;
+        min-width: 194px;
+    }
+
+    .head4 {
+        max-width: 132px;
+        min-width: 132px;
+    }
+
+    .menu button {
+        font-size: 11px;
+        padding: 1px;
+        margin: 1px;
+    }
+
+    .other,
+    .menu {
+        padding: 1px;
+        margin: 0px;
+    }
+
+    .btn-trg {
+        margin: auto;
+    }
+
+    .sub-modal {
+        min-width: 251px;
+    }
+
+    #python .sub-modal-content .framework {
+        width: 30px;
+        height: 30px;
+    }
+
+    #python .sub-modal-content .framework:hover {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navigation-btn,
+    #contactForm button,
+    #return {
+        font-size: 11px;
+    }
+
+    .main-modal {
+        padding-top: 50px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .failure-gif img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-modal {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-height: 900px) {
+
+    .main-modal,
+    #anotherElement.main-modal {
+        padding-bottom: 187px;
+    }
+
+    .sub-modal {
+        min-height: 201px;
+    }
+
+}

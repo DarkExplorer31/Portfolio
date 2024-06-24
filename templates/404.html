@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Page non trouvée</title>
+    </head>
+    <body>
+        <div class="main-modal" id="anotherElement">
+            <div class="head1" id="anotherElement">
+                <h1>La page n'a pas pu être trouver</h1>
+            </div>
+            <div id="init" class="sub-modal open">
+                <div class="sub-modal-content ">
+                    <h2>Désolé, la page que vous recherchez est introuvable.</h2>
+                    <div class="failure-gif">
+                        <img src="https://media1.tenor.com/m/PXOXwsJKbSYAAAAd/where-you.gif"
+                             alt="GIF de l'erreur">
+                    </div>
+                    <button id="return">Revenir en arrière</button>
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock content %}
