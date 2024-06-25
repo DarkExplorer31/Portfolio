@@ -87,14 +87,30 @@ WSGI_APPLICATION = "Portolio.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
+else:
+    # Retrieve secret db password from environment variable
+    db_password = os.getenv("DB_PASSWORD")
+    db_hostname = os.getenv("DB_HOSTNAME")
 
-# Replace the SQLite DATABASES configuration with PostgreSQL:
-DATABASES = {
-    "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
-        conn_max_age=600,
-    )
-}
+    # Check if secret db password is defined
+    if db_password and db_hostname:
+        DATABASES = {
+            "default": dj_database_url.config(
+                default=f"postgres://main:{db_password}"
+                + f"@{db_hostname}.frankfurt-postgres.render.com/portfolio_db1_tcv1"
+            )
+        }
+    else:
+        raise ValueError(
+            "DB_PASSWORD and DB_HOSTNAME environment variable is not defined."
+        )
 
 
 # Password validation
