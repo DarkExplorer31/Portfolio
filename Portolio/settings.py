@@ -103,7 +103,7 @@ else:
     if db_password and db_hostname:
         DATABASES = {
             "default": dj_database_url.config(
-                default=f"postgres://main:{db_password}"
+                default=f"postgres://portfolio_db1_tcv1_user:{db_password}"
                 + f"@{db_hostname}.frankfurt-postgres.render.com/portfolio_db1_tcv1"
             )
         }
