@@ -109,10 +109,24 @@ footer {
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
+    margin: auto;
 }
 
 .sub-modal.open {
     display: block;
+    animation-duration: 0.8s;
+    animation-name: glissement;
+    animation-iteration-count: inherit;
+}
+
+@keyframes glissement {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
 .sub-modal-content {
@@ -722,7 +736,12 @@ textarea {
         padding: 5px;
     }
 
+    .menu button:hover {
+        font-size: 21px;
+    }
+
     .main-modal {
+        padding-top: 70px;
         padding-left: 100px;
         padding-right: 100px;
     }
@@ -826,6 +845,12 @@ textarea {
         padding: 0px;
     }
 
+    .menu button:hover {
+        font-size: 21px;
+        margin: 0px;
+        padding: 0px;
+    }
+
     .menu button,
     .navigation-btn,
     #contactForm button,
@@ -888,26 +913,36 @@ textarea {
     .head1 {
         max-width: 201px;
         min-width: 201px;
+        padding: 3px;
     }
 
     .head2 {
         max-width: 247px;
         min-width: 247px;
+        padding: 3px;
     }
 
     .head3 {
         max-width: 194px;
         min-width: 194px;
+        padding: 3px;
     }
 
     .head4 {
         max-width: 132px;
         min-width: 132px;
+        padding: 3px;
     }
 
     .menu button {
         font-size: 11px;
-        padding: 1px;
+        padding: 2px;
+        margin: 1px;
+    }
+
+    .menu button:hover {
+        font-size: 15px;
+        padding: 2px;
         margin: 1px;
     }
 
@@ -917,8 +952,8 @@ textarea {
         margin: 0px;
     }
 
-    .btn-trg {
-        margin: auto;
+    #Obtn {
+        margin: 1px;
     }
 
     .sub-modal {
@@ -958,17 +993,74 @@ textarea {
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    .navigation-btn {
+        top: 100px;
+    }
+
+    h1 {
+        font-size: 13px;
+    }
+
+    .head1 {
+        margin-top: 2px;
+        max-width: 177px;
+        min-width: 177px;
+    }
+
+    .head2 {
+        margin-top: 2px;
+        max-width: 217px;
+        min-width: 217px;
+    }
+
+    .head3 {
+        margin-top: 2px;
+        max-width: 171px;
+        min-width: 171px;
+    }
+
+    .head4 {
+        margin-top: 2px;
+        max-width: 118px;
+        min-width: 118px;
+    }
+
 }
 
 @media (max-height: 900px) {
 
     .main-modal,
     #anotherElement.main-modal {
-        padding-bottom: 187px;
+        padding-bottom: 150px;
     }
 
     .sub-modal {
         min-height: 201px;
+
     }
 
+    .sub-modal-content {
+        padding: 5px;
+    }
+
+    .sub-modal-content p {
+        margin: 2px;
+    }
+
+    .sub-modal-content h2 {
+        margin: 3px;
+    }
+}
+
+@media (max-height: 470px) {
+    footer {
+        display: none;
+    }
+
+    .main-modal,
+    #anotherElement.main-modal {
+        padding-bottom: 150px;
+        padding-top: 55px;
+    }
 }
