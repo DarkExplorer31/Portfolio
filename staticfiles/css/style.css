@@ -1054,13 +1054,15 @@ textarea {
 }
 
 @media (max-height: 470px) {
-    footer {
+
+    footer,
+    #top-menu {
         display: none;
     }
 
     .main-modal,
     #anotherElement.main-modal {
-        padding-bottom: 150px;
-        padding-top: 55px;
+        padding-bottom: 90px;
+        padding-top: 15px;
     }
 }
