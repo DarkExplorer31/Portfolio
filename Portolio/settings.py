@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
+import sentry_sdk
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -160,6 +161,19 @@ if not DEBUG:
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+DSN = os.getenv("DSN")
+
+sentry_sdk.init(
+    dsn=DSN,
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production.
+    profiles_sample_rate=1.0,
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
