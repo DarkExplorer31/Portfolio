@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PortFolio</title>
+        <title>PortFolio - CHARLES Mathieu</title>
         <meta property="og:title" content="Portfolio" />
         <meta property="og:description"
               content="Je vous présente mon Portfolio de développeur" />
@@ -16,6 +16,10 @@
         <link rel="icon" type="image/x-icon" href="{% static 'images/fav.ico' %}">
     </head>
     <body>
+        <video class="video-background" autoplay loop muted>
+            <source src="{% static 'images/calm.mp4' %}" type="video/mp4">
+            Ton navigateur ne supporte pas les vidéos HTML5.
+        </video>
         <main>
             {% block content %}{% endblock %}
         </main>

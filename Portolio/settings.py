@@ -99,13 +99,15 @@ else:
     # Retrieve secret db password from environment variable
     db_password = os.getenv("DB_PASSWORD")
     db_hostname = os.getenv("DB_HOSTNAME")
+    db_username = os.getenv("DB_USERNAME")
 
+    db_real_username = db_username.replace("_user", "")
     # Check if secret db password is defined
     if db_password and db_hostname:
         DATABASES = {
             "default": dj_database_url.config(
-                default=f"postgres://portfolio_db1_tcv1_user:{db_password}"
-                + f"@{db_hostname}.frankfurt-postgres.render.com/portfolio_db1_tcv1"
+                default=f"postgres://{db_username}:{db_password}"
+                + f"@{db_hostname}.frankfurt-postgres.render.com/{db_real_username}"
             )
         }
     else:

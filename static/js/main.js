@@ -33,15 +33,14 @@ const mainModal4 = document.getElementById('contact-me');
 const subModalInit = document.getElementById('init');
 const subModalLast = document.getElementById('last');
 const subModal1 = document.getElementById('python');
-const subModal2 = document.getElementById('web');
-const subModal3 = document.getElementById('other');
-const subModal4 = document.getElementById('readen-project');
-const subModal5 = document.getElementById('oc-Lettings');
-const subModal6 = document.getElementById('softdesk');
-const subModal7 = document.getElementById('litrevu');
-const subModal8 = document.getElementById('search-best-combinaison');
-const subModal9 = document.getElementById('lock-with-badge');
-const subModal10 = document.getElementById('ocrv1');
+const subModal2 = document.getElementById('other');
+const subModal3 = document.getElementById('readen-project');
+const subModal4 = document.getElementById('oc-Lettings');
+const subModal5 = document.getElementById('softdesk');
+const subModal6 = document.getElementById('litrevu');
+const subModal7 = document.getElementById('search-best-combinaison');
+const subModal8 = document.getElementById('lock-with-badge');
+const subModal9 = document.getElementById('ocrv1');
 const head1 = document.querySelector('.head1');
 const head2 = document.querySelector('.head2');
 const head3 = document.querySelector('.head3');
@@ -65,7 +64,7 @@ if (isHomePage()) {
 }
 
 function buttonManagement() {
-    if (currentModal === 11) {
+    if (currentModal === 10) {
         nextBtn.style.display = "none";
         prevBtn.style.display = "block";
     } else if (currentModal === 0) {
@@ -74,112 +73,6 @@ function buttonManagement() {
     } else {
         prevBtn.style.display = "block";
         nextBtn.style.display = "block";
-    }
-}
-
-function goNextModal() {
-    if (currentModal < 11) {
-        if (currentModal === 0) {
-            mainModal1.style.display = "none";
-            mainModal2.style.display = "block";
-            subModalInit.classList.remove("open");
-            subModal1.classList.add("open");
-            head1.style.display = "none";
-            head2.style.display = "block";
-        } else if (currentModal === 1) {
-            subModal1.classList.remove("open");
-            subModal2.classList.add("open");
-        } else if (currentModal === 2) {
-            subModal2.classList.remove("open");
-            subModal3.classList.add("open");
-        } else if (currentModal === 3) {
-            mainModal2.style.display = "none";
-            mainModal3.style.display = "block";
-            head2.style.display = "none";
-            head3.style.display = "block";
-            subModal3.classList.remove("open");
-            subModal4.classList.add("open");
-        } else if (currentModal === 4) {
-            subModal4.classList.remove("open");
-            subModal5.classList.add("open");
-        } else if (currentModal === 5) {
-            subModal5.classList.remove("open");
-            subModal6.classList.add("open");
-        } else if (currentModal === 6) {
-            subModal6.classList.remove("open");
-            subModal7.classList.add("open");
-        } else if (currentModal === 7) {
-            subModal7.classList.remove("open");
-            subModal8.classList.add("open");
-        } else if (currentModal === 8) {
-            subModal8.classList.remove("open");
-            subModal9.classList.add("open");
-        } else if (currentModal === 9) {
-            subModal9.classList.remove("open");
-            subModal10.classList.add("open");
-        } else if (currentModal === 10) {
-            subModal10.classList.remove("open");
-            subModalLast.classList.add("open");
-            head3.style.display = "none";
-            head4.style.display = "block";
-            mainModal3.style.display = "none";
-            mainModal4.style.display = "block";
-        }
-        currentModal++;
-        buttonManagement();
-    }
-}
-
-function goPrevModal() {
-    if (currentModal > 0) {
-        if (currentModal === 1) {
-            mainModal1.style.display = "block";
-            mainModal2.style.display = "none";
-            head2.style.display = "none";
-            head1.style.display = "block";
-            subModal1.classList.remove("open");
-            subModalInit.classList.add("open");
-        } else if (currentModal === 2) {
-            subModal1.classList.add("open");
-            subModal2.classList.remove("open");
-        } else if (currentModal === 3) {
-            subModal2.classList.add("open");
-            subModal3.classList.remove("open");
-        } else if (currentModal === 4) {
-            mainModal2.style.display = "block";
-            mainModal3.style.display = "none";
-            head3.style.display = "none";
-            head2.style.display = "block";
-            subModal3.classList.add("open");
-            subModal4.classList.remove("open");
-        } else if (currentModal === 5) {
-            subModal4.classList.add("open");
-            subModal5.classList.remove("open");
-        } else if (currentModal === 6) {
-            subModal5.classList.add("open");
-            subModal6.classList.remove("open");
-        } else if (currentModal === 7) {
-            subModal6.classList.add("open");
-            subModal7.classList.remove("open");
-        } else if (currentModal === 8) {
-            subModal7.classList.add("open");
-            subModal8.classList.remove("open");
-        } else if (currentModal === 9) {
-            subModal8.classList.add("open");
-            subModal9.classList.remove("open");
-        } else if (currentModal === 10) {
-            subModal9.classList.add("open");
-            subModal10.classList.remove("open");
-        } else if (currentModal === 11) {
-            subModal10.classList.add("open");
-            subModalLast.classList.remove("open");
-            head4.style.display = "none";
-            head3.style.display = "block";
-            mainModal3.style.display = "block";
-            mainModal4.style.display = "none";
-        }
-        currentModal--;
-        buttonManagement();
     }
 }
 
@@ -197,7 +90,6 @@ const menuBtn10 = document.getElementById('btn-10');
 const menuBtn11 = document.getElementById('btn-11');
 const menuBtn12 = document.getElementById('btn-12');
 const menuBtn13 = document.getElementById('btn-13');
-const menuBtn14 = document.getElementById('btn-14');
 
 /* Add listener for buttons into menu */
 if (menuBtn1) {
@@ -214,7 +106,6 @@ if (menuBtn1) {
     menuBtn11.addEventListener("click", goModal11);
     menuBtn12.addEventListener("click", goModal12);
     menuBtn13.addEventListener("click", goModal13);
-    menuBtn14.addEventListener("click", goModal14);
 } else {
     console.log("le menu n'existe pas ici.");
 }
@@ -238,13 +129,25 @@ const subModals = [
     subModal7,
     subModal8,
     subModal9,
-    subModal10,
     subModalLast,
 ];
 
 const heads = [
     head1, head2, head3, head4
 ];
+
+const contents = document.getElementsByClassName("sub-modal-content");
+
+function scrollUp() {
+    if (contents.length > 0) {
+        for (let i = 0; i < contents.length; i++) {
+            contents[i].scrollTop = 0;
+        }
+    } else {
+        console.log("Aucun élément avec la classe 'sub-modal-content' trouvé.");
+    }
+}
+
 
 function closeMainModalsExcept(modalToShow) {
     mainModals.forEach(modal => {
@@ -255,7 +158,6 @@ function closeMainModalsExcept(modalToShow) {
         }
     });
 }
-
 function closeSubModalsExcept(subModalToShow) {
     subModals.forEach(subModal => {
         if (subModal !== subModalToShow) {
@@ -276,12 +178,115 @@ function closeHeadsExcept(headToShow) {
     });
 }
 
+function goNextModal() {
+    if (currentModal < 11) {
+        if (currentModal === 0) {
+            closeMainModalsExcept(mainModals[1]);
+            closeSubModalsExcept(subModals[1]);
+            closeHeadsExcept(heads[1]);
+        } else if (currentModal === 1) {
+            closeMainModalsExcept(mainModals[1]);
+            closeSubModalsExcept(subModals[2]);
+            closeHeadsExcept(heads[1]);
+        } else if (currentModal === 2) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[3]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 3) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[4]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 4) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[5]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 5) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[6]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 6) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[7]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 7) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[8]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 8) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[9]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 9) {
+            closeMainModalsExcept(mainModals[3]);
+            closeSubModalsExcept(subModals[10]);
+            closeHeadsExcept(heads[3]);
+        }
+        currentModal++;
+        buttonManagement();
+        scrollUp();
+    }
+}
+
+function goPrevModal() {
+    if (currentModal > 0) {
+        if (currentModal === 1) {
+            closeMainModalsExcept(mainModals[0]);
+            closeSubModalsExcept(subModals[0]);
+            closeHeadsExcept(heads[0]);
+        } else if (currentModal === 2) {
+            closeMainModalsExcept(mainModals[1]);
+            closeSubModalsExcept(subModals[1]);
+            closeHeadsExcept(heads[1]);
+        } else if (currentModal === 3) {
+            closeMainModalsExcept(mainModals[1]);
+            closeSubModalsExcept(subModals[2]);
+            closeHeadsExcept(heads[1]);
+        } else if (currentModal === 4) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[3]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 5) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[4]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 6) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[5]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 7) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[6]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 8) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[7]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 9) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[8]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 10) {
+            closeMainModalsExcept(mainModals[2]);
+            closeSubModalsExcept(subModals[9]);
+            closeHeadsExcept(heads[2]);
+        } else if (currentModal === 11) {
+            closeMainModalsExcept(mainModals[3]);
+            closeSubModalsExcept(subModals[10]);
+            closeHeadsExcept(heads[3]);
+        }
+        currentModal--;
+        buttonManagement();
+        scrollUp();
+    }
+}
+
 function goModal1() {
     closeMainModalsExcept(mainModals[0]);
     closeSubModalsExcept(subModals[0]);
     closeHeadsExcept(heads[0]);
     currentModal = 0;
     buttonManagement();
+    scrollUp();
 }
 function goModal2() {
     closeMainModalsExcept(mainModals[1]);
@@ -289,6 +294,7 @@ function goModal2() {
     closeHeadsExcept(heads[1]);
     currentModal = 1;
     buttonManagement();
+    scrollUp();
 }
 function goModal3() {
     closeMainModalsExcept(mainModals[1]);
@@ -296,6 +302,7 @@ function goModal3() {
     closeHeadsExcept(heads[1]);
     currentModal = 1;
     buttonManagement();
+    scrollUp();
 }
 function goModal4() {
     closeMainModalsExcept(mainModals[1]);
@@ -303,20 +310,23 @@ function goModal4() {
     closeHeadsExcept(heads[1]);
     currentModal = 2;
     buttonManagement();
+    scrollUp();
 }
 function goModal5() {
-    closeMainModalsExcept(mainModals[1]);
+    closeMainModalsExcept(mainModals[2]);
     closeSubModalsExcept(subModals[3]);
-    closeHeadsExcept(heads[1]);
+    closeHeadsExcept(heads[2]);
     currentModal = 3;
     buttonManagement();
+    scrollUp();
 }
 function goModal6() {
     closeMainModalsExcept(mainModals[2]);
-    closeSubModalsExcept(subModals[4]);
+    closeSubModalsExcept(subModals[3]);
     closeHeadsExcept(heads[2]);
-    currentModal = 4;
+    currentModal = 3;
     buttonManagement();
+    scrollUp();
 }
 function goModal7() {
     closeMainModalsExcept(mainModals[2]);
@@ -324,6 +334,7 @@ function goModal7() {
     closeHeadsExcept(heads[2]);
     currentModal = 4;
     buttonManagement();
+    scrollUp();
 }
 function goModal8() {
     closeMainModalsExcept(mainModals[2]);
@@ -331,6 +342,7 @@ function goModal8() {
     closeHeadsExcept(heads[2]);
     currentModal = 5;
     buttonManagement();
+    scrollUp();
 }
 function goModal9() {
     closeMainModalsExcept(mainModals[2]);
@@ -338,6 +350,7 @@ function goModal9() {
     closeHeadsExcept(heads[2]);
     currentModal = 6;
     buttonManagement();
+    scrollUp();
 }
 function goModal10() {
     closeMainModalsExcept(mainModals[2]);
@@ -345,6 +358,7 @@ function goModal10() {
     closeHeadsExcept(heads[2]);
     currentModal = 7;
     buttonManagement();
+    scrollUp();
 }
 function goModal11() {
     closeMainModalsExcept(mainModals[2]);
@@ -352,6 +366,7 @@ function goModal11() {
     closeHeadsExcept(heads[2]);
     currentModal = 8;
     buttonManagement();
+    scrollUp();
 }
 function goModal12() {
     closeMainModalsExcept(mainModals[2]);
@@ -359,18 +374,13 @@ function goModal12() {
     closeHeadsExcept(heads[2]);
     currentModal = 9;
     buttonManagement();
+    scrollUp();
 }
 function goModal13() {
-    closeMainModalsExcept(mainModals[2]);
+    closeMainModalsExcept(mainModals[3]);
     closeSubModalsExcept(subModals[10]);
-    closeHeadsExcept(heads[2]);
+    closeHeadsExcept(heads[3]);
     currentModal = 10;
     buttonManagement();
-}
-function goModal14() {
-    closeMainModalsExcept(mainModals[3]);
-    closeSubModalsExcept(subModals[11]);
-    closeHeadsExcept(heads[3]);
-    currentModal = 11;
-    buttonManagement();
+    scrollUp();
 }
